@@ -63,6 +63,9 @@ function App() {
           />
         </div>
       </div>
+      <div className="footer">
+        Devloped by Shivansh | Technology used React
+      </div>
     </div>
   );
 }

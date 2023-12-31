@@ -56,13 +56,13 @@
   animation: rotate 20s linear infinite;
 }
 @keyframes rotate {
-    from {
-      transform: rotate(0deg); /* Start the rotation from 0 degrees */
-    }
-    to {
-      transform: rotate(360deg); /* Rotate to 360 degrees */
-    }
+  from {
+    transform: rotate(0deg); /* Start the rotation from 0 degrees */
   }
+  to {
+    transform: rotate(360deg); /* Rotate to 360 degrees */
+  }
+}
 .weatherCondition {
   font-size: 40px;
   font-weight: 500;
@@ -133,20 +133,25 @@
   font-size: 15px;
 }
 @media screen and (max-width: 500px) {
-    .container{
-        width: 95vw;
-        height: 900px;
-        flex-direction: column;
-        margin: 20px;
-    }
-    .right{
-        width: 100%;
-        height: 200px;
-    }
-    .left{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        
-    }
+  .container {
+    width: 90vw;
+    height: 800px;
+    flex-direction: column;
+    margin: 10px auto;
   }
+  .right {
+    width: 100%;
+    height: 200px;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px;
+    color: white;
+  }
+}
