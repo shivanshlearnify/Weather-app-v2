@@ -5,8 +5,8 @@ import CurrentData from "./components/CurrentData";
 import WeatherInfo1 from "./components/WeatherInfo1";
 import WeatherInfo2 from "./components/WeatherInfo2";
 import useLocation from "./hooks/useLocation";
-import usefetchedData from "./hooks/usefetchedData";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { getWeatherData } from "./api";
 
 function App() {
   const searchedCity = useRef();
@@ -14,17 +14,12 @@ function App() {
   const [data, setData] = useState({});
 
   const handleSearchClick = async () => {
-    const API = "d064627dfb810fd067d5be2d911909fa";
     const cityValue = searchedCity.current.value;
 
     try {
       if (cityValue) {
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${API}&units=metric`
-        );
-        const newData = await response.json();
+        const newData = await getWeatherData(cityValue);
         setData(newData);
-        console.log(newData);
       }
     } catch (error) {
       console.log(error);
@@ -63,9 +58,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="footer">
-        Devloped by Shivansh | Technology used React
-      </div>
+      <div className="footer">Devloped by Shivansh | Technology used React</div>
     </div>
   );
 }
