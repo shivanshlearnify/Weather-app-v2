@@ -31,7 +31,7 @@ function App() {
     <div>
       <div className="container">
         <div className="right">
-          <CurrentLocation city={city} country={country} />
+          {/* <CurrentLocation city={city} country={country} /> */}
           <CurrentData />
         </div>
         <div className="left">
